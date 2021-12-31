@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace Gymone.API
 {
@@ -43,38 +44,47 @@ namespace Gymone.API
             });
 
             services.AddCors();
-
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.ResolveDependencies();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment() || env.IsProduction())
+            if (env.IsDevelopment() )
             {
                  
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gymone v1");
+                });
 
+            }
+           else if (env.IsProduction())
+            {
+                app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
                     string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
                     c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "Gymone");
-                    //c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gymone v1");
                 });
             }
-
+             
+            loggerFactory.AddFile("Logs/ErrorLog-{Date}.log");
             app.UseHttpsRedirection();
 
             app.UseRouting();
             //Middle ware. to Encrypt or decrypt the URL
-            app.UseEncryptDecryptQueryStringsMiddleware();
+            //app.UseEncryptDecryptQueryStringsMiddleware();
             app.UseAuthorization();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                //endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
         }
     }

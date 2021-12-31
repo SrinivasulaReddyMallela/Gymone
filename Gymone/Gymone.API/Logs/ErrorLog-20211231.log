@@ -1,0 +1,10 @@
+2021-12-31T20:39:01.8214828+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-31T20:39:01.8367121+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-31T20:39:01.8398971+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)
+2021-12-31T20:39:08.5545891+05:30 80000010-0001-f100-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Account" for actions - Gymone.API.Controllers.AccountController.GetRoles (Gymone.API),Gymone.API.Controllers.AccountController.GetAllUsers (Gymone.API),Gymone.API.Controllers.AccountController.GetRoleByUserID (Gymone.API),Gymone.API.Controllers.AccountController.GetUserID_By_UserName (Gymone.API),Gymone.API.Controllers.AccountController.Get_checkUsernameExits (Gymone.API),Gymone.API.Controllers.AccountController.Get_CheckUserRoles (Gymone.API),Gymone.API.Controllers.AccountController.GetUserName_BY_UserID (Gymone.API),Gymone.API.Controllers.AccountController.DisplayAllUser_And_Roles (Gymone.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
