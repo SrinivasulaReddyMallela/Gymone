@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Gymone.API.Repository
 {
-    interface IReceipt 
+    public interface IReceipt 
     {
         DataSet GenerateRecepitDataset(string MemberID);
         DataSet GenerateDeclarationDataset(string MemberID);

@@ -6,7 +6,7 @@ using Gymone.Entities;
 
 namespace Gymone.API.Repository
 {
-    interface IRegisterMember
+    public interface IRegisterMember
     {
         int InsertMember(MemberRegistrationDTO objMRDTO);
         IEnumerable<MemberRegistrationDTO> GetMember();

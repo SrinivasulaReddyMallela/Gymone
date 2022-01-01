@@ -6,12 +6,12 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace Gymone.API.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/[controller]")]
     public class PlanMasterController : BaseController
     {
         private readonly ILogger<PlanMasterController> _logger;
@@ -22,6 +22,8 @@ namespace Gymone.API.Controllers
             _logger = logger;
         }
         [HttpPost]
+        [Route("InsertPlan")]
+         
         public void InsertPlan(PlanMasterDTO Plan)
         {
             try
@@ -34,6 +36,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("GetPlan")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PlanMasterDTO> GetPlan()
         {
             try
@@ -47,6 +53,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("GetPlanByID/{PlanID}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public PlanMasterDTO GetPlanByID(string PlanID)
         {
             try
@@ -60,6 +70,7 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpPost]
+        [Route("UpdatePlan")]
         public void UpdatePlan(PlanMasterDTO Plan)
         {
             try
@@ -73,6 +84,7 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpPost]
+        [Route("DeletePlan/{PlanID}")]
         public void DeletePlan(string PlanID)
         {
             try
@@ -86,6 +98,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("PlannameExists/{Planname}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool PlannameExists(string Planname)
         {
             try
@@ -99,6 +115,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("GetPlanByWorkTypeID/{SchemeID}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PlanMasterDTO> GetPlanByWorkTypeID(string SchemeID)
         {
             try

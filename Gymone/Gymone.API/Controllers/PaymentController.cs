@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace Gymone.API.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/[controller]")]
     public class PaymentController : BaseController
     {
         private readonly ILogger<PaymentController> _logger;
@@ -23,6 +22,11 @@ namespace Gymone.API.Controllers
         }
 
         [HttpPost]
+        
+        [Route("InsertPaymentDetails")]
+       
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public int InsertPaymentDetails(PaymentDetailsDTO objPD)
         {
             try
@@ -36,6 +40,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpPost]
+        [Route("UpdatePaymentDetails")]
+
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public int UpdatePaymentDetails(PaymentDetailsDTO objPD)
         {
             try

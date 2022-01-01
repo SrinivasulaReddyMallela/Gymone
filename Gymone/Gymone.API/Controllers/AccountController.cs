@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 
 namespace Gymone.API.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/[controller]")]
     public class AccountController : BaseController
     {
         private readonly ILogger<AccountController> _logger;
@@ -23,9 +22,10 @@ namespace Gymone.API.Controllers
             _logger = logger;
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("GetRoles")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<Role> GetRoles()
         {
             try
@@ -40,9 +40,11 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("GetAllUsers")]
+
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<Users> GetAllUsers()
         {
             try
@@ -52,14 +54,15 @@ namespace Gymone.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogWarning(1, ex, "GetAllUsers", 1);
-                //return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "Internal Server Error" });
+               // return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "Internal Server Error" });
                 return new List<Users>();
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("GetRoleByUserID/{UserId:int}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string GetRoleByUserID(string UserId)
         {
             try
@@ -73,9 +76,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("GetUserID_By_UserName/{UserName}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string GetUserID_By_UserName(string UserName)
         {
             try
@@ -89,9 +93,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("Get_checkUsernameExits/{UserName}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string Get_checkUsernameExits(string username)
         {
             try
@@ -105,9 +110,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("Get_checkUsernameExits/{UserId:int}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool Get_CheckUserRoles(string UserId)
         {
             try
@@ -121,9 +127,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("GetUserName_BY_UserID/{UserId:int}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string GetUserName_BY_UserID(string UserId)
         {
             try
@@ -137,9 +144,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("DisplayAllUser_And_Roles")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<AllroleandUser> DisplayAllUser_And_Roles()
         {
             try

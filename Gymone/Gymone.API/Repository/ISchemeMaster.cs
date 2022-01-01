@@ -6,7 +6,7 @@ using Gymone.Entities;
 
 namespace Gymone.API.Repository
 {
-    interface ISchemeMaster
+    public interface ISchemeMaster
     {
 
 

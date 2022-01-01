@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Gymone.API.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
-    public class BaseController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
 
     }

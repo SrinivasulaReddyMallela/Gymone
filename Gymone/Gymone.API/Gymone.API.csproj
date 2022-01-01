@@ -20,5 +20,9 @@
     <ProjectReference Include="..\Gymone.Entities\Gymone.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 
 </Project>

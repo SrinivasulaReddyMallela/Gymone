@@ -6,23 +6,27 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 
 namespace Gymone.API.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
-    public class PaymentlistingController : BaseController
+    [Route("api/[controller]")]
+    public class PaymentListingController : BaseController
     {
 
-        private readonly ILogger<PaymentlistingController> _logger;
+        private readonly ILogger<PaymentListingController> _logger;
         private readonly IPaymentlisting ipaymentlisting;
-        public PaymentlistingController(IPaymentlisting _IPaymentlisting, ILogger<PaymentlistingController> logger)
+        public PaymentListingController(IPaymentlisting _IPaymentlisting, ILogger<PaymentListingController> logger)
         {
             ipaymentlisting = _IPaymentlisting;
             _logger = logger;
         }
         [HttpGet]
+        [Route("AllPaymentDetails/{MemberID}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PaymentlistingDTO> AllPaymentDetails(string MemberID)
         {
             try
@@ -36,6 +40,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("AllPaymentDetails")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PaymentlistingDTO> AllPaymentDetails()
         {
             try
@@ -49,6 +57,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("ListofMemberNo/{Memberno}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PaymentAutocompDTO> ListofMemberNo(string Memberno)
         {
             try
@@ -62,6 +74,10 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
+        [Route("ListofMemberName/{Membername}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IEnumerable<PaymentAutocompDTO> ListofMemberName(string Membername)
         {
             try
