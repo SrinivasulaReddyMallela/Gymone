@@ -37,6 +37,7 @@ namespace Gymone.API
             services.AddCors();
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.ResolveDependencies();
+            services.AddDataProtection();
 
         }
 
@@ -67,10 +68,10 @@ namespace Gymone.API
              
             loggerFactory.AddFile("Logs/ErrorLog-{Date}.log");
             app.UseHttpsRedirection();
-
-            app.UseRouting();
             //Middle ware. to Encrypt or decrypt the URL
-            //app.UseEncryptDecryptQueryStringsMiddleware();
+            app.UseEncryptDecryptQueryStringsMiddleware();
+            app.UseRouting();
+           
             app.UseAuthorization();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseEndpoints(endpoints =>

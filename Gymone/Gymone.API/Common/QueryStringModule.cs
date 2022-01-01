@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +10,8 @@ using System.Threading.Tasks;
 namespace Gymone.API.Common
 {
     public class QueryStringModule
-    {
+    { 
+     
         private const string PARAMETER_NAME = "Data";
         private const string ENCRYPTION_KEY = "key";
         private static ASCIIEncoding encoding;
