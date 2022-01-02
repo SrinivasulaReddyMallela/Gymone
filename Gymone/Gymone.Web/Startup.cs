@@ -31,6 +31,7 @@ namespace Gymone.Web
             services.AddOptions();
             //services.AddRazorPages();            
             services.AddDataProtection();
+             
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies, tempdata is needed for a given request.
@@ -75,19 +76,21 @@ namespace Gymone.Web
                 options.SuppressXFrameOptionsHeader = false;
             });
 
-            //services.ConfigureApplicationCookie(options =>
-            //{
-            //    // Cookie settings
-            //    options.Cookie.HttpOnly = true;
-            //    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
-            //    options.LoginPath = "/Identity/Account/Login";
-            //    options.LogoutPath = "/Identity/Account/Logout";
-            //    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-            //    options.SlidingExpiration = true;
-            //});
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout";
+                options.AccessDeniedPath = "/Home/AccessDenied";
+                options.SlidingExpiration = true;
+            });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             services.AddResponseCompression();
             //services.AddResponseCaching();
             //services.AddHsts(options =>
@@ -113,7 +116,7 @@ namespace Gymone.Web
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -121,20 +124,24 @@ namespace Gymone.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //Middle ware. to Encrypt or decrypt the URL
-          //  app.UseEncryptDecryptQueryStringsMiddleware();
+           //app.UseEncryptDecryptQueryStringsMiddleware();
 
             app.UseCookiePolicy();
             app.UseSession();
             app.UseAuthentication();
-            //  app.UseMvcWithDefaultRoute();
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            //app.UseMvcWithDefaultRoute();
+            //app.UseRouting();
+            //app.UseAuthorization();
+            //app.UseMvc();
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            //});
+            app.UseMvcWithDefaultRoute();
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            //});
         }
     }
 }

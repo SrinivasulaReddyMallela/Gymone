@@ -1,6 +1,7 @@
 ﻿using Gymone.API.Repository;
 using Gymone.Entities;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,11 +17,41 @@ namespace Gymone.API.Controllers
     {
         private readonly ILogger<AccountController> _logger;
         private readonly IAccountData accountdata;
-        public AccountController(IAccountData _accountData, ILogger<AccountController> logger)
+        private readonly SignInManager<ApplicationWebUser> _signInManager;
+        public AccountController(SignInManager<ApplicationWebUser> signInManager, IAccountData _accountData, ILogger<AccountController> logger)
         {
+            _signInManager = signInManager;
             accountdata = _accountData;
             _logger = logger;
         }
+        [HttpGet]
+        [Route("Login/{Login}/{Password}/{persistCookie:bool}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool Login(string Login, string Password, bool persistCookie = false)
+        {
+            try
+            {
+                 return _signInManager.PasswordSignInAsync(Login, Password, persistCookie, true).GetAwaiter().GetResult().Succeeded;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(1, ex, "Login", 1);
+                return false;
+            }
+        }
+
+        //[HttpGet]
+        //[Route("IsUserInRole/{userName}/{RoleName}")]
+        //[Consumes(MediaTypeNames.Application.Json)]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //public bool IsUserInRole(string userName, string RoleName)
+        //{
+        //    return _signInManager.i
+        //}
+
         [HttpGet]
         [Route("GetRoles")]
         [Consumes(MediaTypeNames.Application.Json)]
@@ -59,7 +90,7 @@ namespace Gymone.API.Controllers
             }
         }
         [HttpGet]
-        [Route("GetRoleByUserID/{UserId:int}")]
+        [Route("GetRoleByUserID/{UserId}")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

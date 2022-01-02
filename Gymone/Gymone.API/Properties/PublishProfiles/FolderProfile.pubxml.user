@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\IIS\Gymone.API</_PublishTargetUrl>
-    <History>True|2022-01-01T02:18:18.7944212Z;True|2022-01-01T06:45:12.3626960+05:30;True|2022-01-01T06:33:40.6085773+05:30;</History>
+    <History>True|2022-01-02T04:06:51.6541118Z;True|2022-01-02T08:40:01.7621729+05:30;False|2022-01-02T08:39:26.2591549+05:30;False|2022-01-02T08:38:54.9397111+05:30;True|2022-01-02T07:38:44.2834290+05:30;True|2022-01-01T20:32:44.6021841+05:30;True|2022-01-01T20:32:16.7416211+05:30;True|2022-01-01T07:48:18.7944212+05:30;True|2022-01-01T06:45:12.3626960+05:30;True|2022-01-01T06:33:40.6085773+05:30;</History>
   </PropertyGroup>
 </Project>

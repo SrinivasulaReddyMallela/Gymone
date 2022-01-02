@@ -28,7 +28,9 @@ namespace Gymone.Web.Common
         }
         public async Task Invoke(HttpContext context)
         {
-
+            List<string> ignoreEntenstions = new List<string>() { ".css", ".js", ".htm", ".html" };
+            //if (!ignoreEntenstions.Contains("."+context.Request.Path.Value.Split(".").LastOrDefault()))
+            //{
             if (UriHelper.GetEncodedUrl(context.Request).Contains("?"))
             {
                 string contextQuery = GetAbsoluteUri().Query.ToString();
@@ -51,6 +53,8 @@ namespace Gymone.Web.Common
                 }
             }
             await _next.Invoke(context);
+            //}
+
         }
         #region Utils
         private static Uri GetAbsoluteUri()

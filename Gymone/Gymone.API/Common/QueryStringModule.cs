@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ using System.Threading.Tasks;
 namespace Gymone.API.Common
 {
     public class QueryStringModule
-    { 
-     
+    {
+
         private const string PARAMETER_NAME = "Data";
         private const string ENCRYPTION_KEY = "key";
         private static ASCIIEncoding encoding;
@@ -27,7 +28,9 @@ namespace Gymone.API.Common
         }
         public async Task Invoke(HttpContext context)
         {
-
+            List<string> ignoreEntenstions = new List<string>() { ".css", ".js", ".htm", ".html" };
+            //if (!ignoreEntenstions.Contains("." + context.Request.Path.Value.Split(".").LastOrDefault()))
+            //{
             if (UriHelper.GetEncodedUrl(context.Request).Contains("?"))
             {
                 string contextQuery = GetAbsoluteUri().Query.ToString();
@@ -49,6 +52,7 @@ namespace Gymone.API.Common
                     }
                 }
             }
+            // }
             await _next.Invoke(context);
         }
         #region Utils

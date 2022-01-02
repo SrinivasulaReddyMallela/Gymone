@@ -9,6 +9,7 @@ namespace Gymone.API.Repository
 {
     public interface IAccountData
     {
+        bool Login(string Login,string Password, bool persistCookie = false);
         IEnumerable<Role> GetRoles();
         IEnumerable<Users> GetAllUsers();
         string GetRoleByUserID(string UserId);

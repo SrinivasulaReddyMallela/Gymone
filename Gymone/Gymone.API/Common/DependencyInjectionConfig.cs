@@ -1,11 +1,9 @@
-﻿using Gymone.API.Repository;
+﻿using Gymone.API.Context;
+using Gymone.API.Repository;
+using Gymone.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gymone.API.Common
 {
@@ -13,6 +11,10 @@ namespace Gymone.API.Common
     {
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
+            services.AddTransient<IDbContextFactory<ApplicationDbContext>, AppDbContextFactory>();
+            //services.AddDefaultIdentity<ApplicationWebUser>()
+            //        .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
+
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IDapper, Dapperr>();
             services.AddScoped<IAccountData, AccountData>();
@@ -23,6 +25,7 @@ namespace Gymone.API.Common
             services.AddScoped<IRegisterMember, RegisterMember>();
             services.AddScoped<IRenewal, Renewal>();
             services.AddScoped<ISchemeMaster, SchemeMaster>();
+            services.AddTransient<IUserRepository<ApplicationWebUser>, UserRepository>();
             return services;
         }
     }

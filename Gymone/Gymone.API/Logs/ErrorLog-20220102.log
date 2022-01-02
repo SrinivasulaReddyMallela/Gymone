@@ -1,0 +1,8 @@
+2022-01-02T07:35:00.0270767+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-02T07:35:00.0404433+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-02T07:35:00.0438573+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)
+2022-01-02T07:36:26.3482974+05:30 80000011-0001-f100-b63f-84710c7967bb [WRN] Invalid password for user "d6808e80-3a2a-4345-97b8-02d2e679a144". (c2dce6c7)
+2022-01-02T07:36:26.3530564+05:30 80000011-0001-f100-b63f-84710c7967bb [WRN] User "d6808e80-3a2a-4345-97b8-02d2e679a144" failed to provide the correct password. (ec8d2479)
+2022-01-02T09:43:08.6368352+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-02T09:43:08.6526531+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-02T09:43:08.6563197+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)

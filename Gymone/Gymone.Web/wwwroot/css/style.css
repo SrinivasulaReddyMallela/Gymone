@@ -3857,3 +3857,20 @@ table.focus-on tbody tr.focused td {
   padding-left: 20px;
 }
 /*# sourceMappingURL=style.css.map */
+.authentication-bg {
+    background-image: url(../images/authentication-bg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.bg-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    opacity: .7;
+    background-color: #000;
+}

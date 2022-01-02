@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gymone.API", "Gymone.API\Gy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gymone.Web", "Gymone.Web\Gymone.Web.csproj", "{8D1B1277-4CFB-457C-9270-7AFFB7047AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gymone.Entities", "Gymone.Entities\Gymone.Entities.csproj", "{91AF9088-864D-49D3-8660-CF92A74899A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gymone.Entities", "Gymone.Entities\Gymone.Entities.csproj", "{91AF9088-864D-49D3-8660-CF92A74899A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

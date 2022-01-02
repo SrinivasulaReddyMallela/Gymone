@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-
+ 
 
 namespace Gymone.API.Repository
 {
@@ -19,6 +19,12 @@ namespace Gymone.API.Repository
         public AccountData(IConfiguration config)
         {
             _config = config;
+        }
+
+        public bool Login(string Login, string Password, bool persistCookie = false)
+        {
+            return true;
+           // return WebMatrix.WebData.WebSecurity.Login(Login, Password,persistCookie);
         }
 
         public IEnumerable<Role> GetRoles()

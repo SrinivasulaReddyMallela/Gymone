@@ -18,16 +18,25 @@ namespace Gymone.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    // To load dlls.
-                    var p = System.Reflection.Assembly.GetEntryAssembly().Location;
-                    p = p.Substring(0, p.LastIndexOf(@"\") + 1);
-                    webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
-                    webBuilder.UseContentRoot(p);
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                // To load dlls.
+                var p = System.Reflection.Assembly.GetEntryAssembly().Location;
+                p = p.Substring(0, p.LastIndexOf(@"\") + 1);
+                webBuilder.UseSetting(WebHostDefaults.SuppressStatusMessagesKey, "True");
+                webBuilder.UseContentRoot(p);
+                webBuilder.UseStartup<Startup>();
+            })
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var env = hostingContext.HostingEnvironment;
+                config.AddJsonFile("appsettings.json", true, true)
+                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json",
+                        true, true);
 
-                    webBuilder.UseStartup<Startup>();
-                }).ConfigureLogging((hostingContext, logging) =>
+                config.AddEnvironmentVariables();
+            })
+            .ConfigureLogging((hostingContext, logging) =>
                 {
                     logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
                     logging.AddConsole();
