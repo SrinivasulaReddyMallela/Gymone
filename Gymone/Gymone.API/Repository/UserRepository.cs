@@ -174,13 +174,19 @@ namespace Gymone.API.Repository
             return Task.FromResult(user.PasswordHash);
         }
 
-        public Task SetPasswordHashAsync(ApplicationWebUser user, string passwordHash,
+        public Task<bool> SetPasswordHashAsync(ApplicationWebUser user, string passwordHash,
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            user.PasswordHash = passwordHash;
-            return Task.CompletedTask;
-        }
 
+            using (var context = _contextFactory.GetContext())
+            {
+               var userdata= context.Users.Where(a => a.Id == user.Id).FirstOrDefault();
+                userdata.PasswordHash = passwordHash;
+                context.Update(userdata);
+                context.SaveChanges();
+            }
+            return Task.FromResult(true);
+        }
         #endregion
     }
 }

@@ -89,3 +89,4 @@ D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\bin\Debug\netcoreapp3.1\Mi
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\UserDashboard.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Changepassword.cshtml.g.cs

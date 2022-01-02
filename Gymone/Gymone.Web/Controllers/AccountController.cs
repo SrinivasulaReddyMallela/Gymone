@@ -1,5 +1,6 @@
 ﻿using Gymone.Entities;
 using Gymone.Web.Common;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Gymone.Web.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _Configure;
@@ -81,6 +82,12 @@ namespace Gymone.Web.Controllers
         }
         public IActionResult Logout()
         {
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                if (cookie == ".Gymone.Svr")
+                    Response.Cookies.Delete(cookie);
+            }
+            HttpContext.Session.Clear();
             return View();
         }
         public IActionResult ForgotPassword()
@@ -95,6 +102,46 @@ namespace Gymone.Web.Controllers
         public IActionResult TermsAndConditions()
         {
             return View();
+        }
+        public IActionResult ChangePassword()
+        {
+            return View(new ChangepasswordVM());
+        }
+        [HttpPost]
+        // [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Changepassword(ChangepasswordVM VM)
+        {
+            if (ModelState.IsValid)
+            {
+                if (HttpContext.Session.Get<string>("UserID") == "" || HttpContext.Session.Get<string>("UserID") == null)
+                {
+                    ModelState.AddModelError("Error", "UserName Does not exists");
+                }
+                else
+                {
+                    if (VM.Newpassword == VM.OldPassword)
+                    {
+                        ModelState.AddModelError("Error", "Old password should not same with new password");
+                    }
+                    else
+                    {
+                        var changePasswordResult = await ApiClientFactory.Instance.ReturnQueryStringValues<bool>($"Account/ChangePassword/{HttpContext.Session.Get<string>("UserID")}/{VM.OldPassword}/{VM.Newpassword}");
+                        if (!changePasswordResult)
+                        {
+                            ModelState.AddModelError("Error", "Please try one more time");
+                        }
+                        else
+                        {
+                            ViewBag.ResultMessage = "Password Changed Successfully";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("Error", "Fill on Fields");
+            }
+            return View(VM);
         }
 
     }

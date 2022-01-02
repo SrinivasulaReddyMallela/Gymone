@@ -79,5 +79,7 @@ namespace Gymone.API.Repository
         /// </summary>
         Task<TUser> FindByNameAsync(string normalizedUserName,
             CancellationToken cancellationToken = default(CancellationToken));
+        Task<bool> SetPasswordHashAsync(ApplicationWebUser user, string passwordHash,
+           CancellationToken cancellationToken = default(CancellationToken));
     }
 }

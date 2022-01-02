@@ -9,14 +9,11 @@ using Gymone.Web.Common;
 
 namespace Gymone.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
-            if (HttpContext.Session.Get<string>("UserID") == ""|| HttpContext.Session.Get<string>("UserID")==null)
-                return RedirectToAction("Login", "Account");
-            else
-                return View();
+            return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

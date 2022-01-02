@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@using Gymone.Entities
+@using Gymone.Web.Common
+@using Newtonsoft.Json
+@using System
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -66,12 +72,12 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Wallet</a>
-                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
+                                <a class="dropdown-item" href="/Account/ChangePassword"><i class="mdi mdi-account-circle"></i> Change Password</a>
+                                @*<a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Wallet</a>
+                                    <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
+                                    <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>*@
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="/Account/Logout"><i class="mdi mdi-power text-danger"></i> Logout</a>
                             </div>
                         </div>
                     </li>
@@ -101,9 +107,87 @@
                     <ul class="metismenu" id="side-menu">
                         <li class="menu-title">Menu</li>
                         <li>
-                            <a href="/Home/Dashboard" class="waves-effect">
-                                <i class="icon-accelerator"></i> <span> Dashboard </span>
-                            </a>
+
+                            @if (JsonConvert.DeserializeObject<string>(HttpContextAccessor.HttpContext.Session.GetString("LoginType")) == "Admin")
+                            {
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Dashboard </span>
+                                </a>
+
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> User Accounts </span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Schemes</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Plans</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> List of All Roles Assigned</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> List of all User</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> List of all Roles</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Assign Role To User</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Yearwise Report</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Monthwise Report</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Details Member Report</span>
+                                </a>
+                                <a href="/Home/Dashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> All Member List</span>
+                                </a>
+                            }
+                            else if (JsonConvert.DeserializeObject<string>(HttpContextAccessor.HttpContext.Session.GetString("LoginType")) == "SystemUser")
+                            {
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Dashboard </span>
+                                </a>
+
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Register Member </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Payment Listing </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Payment Renewal </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Receipt / Candidate </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Yearwise Report  </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Monthwise Report  </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Details Member Report  </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> All Member List </span>
+                                </a>
+                                <a href="/Home/UserDashboard" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> Renewal Report </span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="/Home/AccessDenied" class="waves-effect">
+                                    <i class="icon-accelerator"></i> <span> AccessDenied</span>
+                                </a>
+                            }
                         </li>
                     </ul>
 

@@ -18,11 +18,17 @@ namespace Gymone.API.Controllers
         private readonly ILogger<AccountController> _logger;
         private readonly IAccountData accountdata;
         private readonly SignInManager<ApplicationWebUser> _signInManager;
-        public AccountController(SignInManager<ApplicationWebUser> signInManager, IAccountData _accountData, ILogger<AccountController> logger)
+        private readonly IUserRepository<ApplicationWebUser> UserRepository;
+        private readonly UserManager<ApplicationWebUser> _userManager;
+        public AccountController(SignInManager<ApplicationWebUser> signInManager, IAccountData _accountData, ILogger<AccountController> logger,
+            IUserRepository<ApplicationWebUser> userRepository,
+            UserManager<ApplicationWebUser> userManager)
         {
             _signInManager = signInManager;
             accountdata = _accountData;
             _logger = logger;
+            UserRepository = userRepository;
+            _userManager = userManager;
         }
         [HttpGet]
         [Route("Login/{Login}/{Password}/{persistCookie:bool}")]
@@ -33,7 +39,7 @@ namespace Gymone.API.Controllers
         {
             try
             {
-                 return _signInManager.PasswordSignInAsync(Login, Password, persistCookie, true).GetAwaiter().GetResult().Succeeded;
+                return _signInManager.PasswordSignInAsync(Login, Password, persistCookie, true).GetAwaiter().GetResult().Succeeded;
             }
             catch (Exception ex)
             {
@@ -41,16 +47,43 @@ namespace Gymone.API.Controllers
                 return false;
             }
         }
-
-        //[HttpGet]
-        //[Route("IsUserInRole/{userName}/{RoleName}")]
-        //[Consumes(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //public bool IsUserInRole(string userName, string RoleName)
-        //{
-        //    return _signInManager.i
-        //}
+        [HttpGet]
+        [Route("GetLoginUser/{UserID}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ApplicationWebUser GetLoginUser(string UserID)
+        {
+            try
+            {
+               return _userManager.FindByIdAsync(UserID).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(1, ex, "ChangePassword", 1);
+                return new ApplicationWebUser();
+            }
+        }
+        [HttpGet]
+        [Route("ChangePassword/{UserID}/{OLDPassword}/{NewPassword}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<bool> ChangePassword(string UserID, string OLDPassword, string NewPassword)
+        {
+            try
+            {
+                var user = _userManager.FindByIdAsync(UserID).GetAwaiter().GetResult();
+               return await UserRepository.SetPasswordHashAsync(user, new PasswordHasher<ApplicationWebUser>().HashPassword(user, NewPassword));
+               // return _userManager.UpdatePasswordHash(user, NewPassword, false).GetAwaiter().GetResult();
+               // return _userManager.ChangePasswordAsync(user, OLDPassword, NewPassword).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(1, ex, "ChangePassword", 1);
+                return false;
+            }
+        }
 
         [HttpGet]
         [Route("GetRoles")]
@@ -85,7 +118,7 @@ namespace Gymone.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogWarning(1, ex, "GetAllUsers", 1);
-               // return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "Internal Server Error" });
+                // return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "Internal Server Error" });
                 return new List<Users>();
             }
         }
