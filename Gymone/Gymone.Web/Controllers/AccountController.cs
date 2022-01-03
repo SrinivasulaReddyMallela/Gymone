@@ -30,26 +30,26 @@ namespace Gymone.Web.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            return PartialView("Login");
         }
 
         [HttpPost]
         [AllowAnonymous]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
 
         public async Task<IActionResult> Login(Login login)
         {
             if (ModelState.IsValid)
             {
                 var success = await ApiClientFactory.Instance.ReturnQueryStringValues<bool>($"Account/Login/{login.username}/{login.password}/{login.RememberMe}");
-                var UserID = await ApiClientFactory.Instance.ReturnQueryStringValues($"Account/GetUserID_By_UserName/{login.username}");
-                var LoginType = await ApiClientFactory.Instance.ReturnQueryStringValues($"Account/GetRoleByUserID/{UserID}");
                 if (success == true)
                 {
+                    var UserID = await ApiClientFactory.Instance.ReturnQueryStringValues($"Account/GetUserID_By_UserName/{login.username}");
+                    var LoginType = await ApiClientFactory.Instance.ReturnQueryStringValues($"Account/GetRoleByUserID/{UserID}");
                     if (string.IsNullOrEmpty(Convert.ToString(LoginType)))
                     {
                         ModelState.AddModelError("Error", "Rights to User are not Provide Contact to Admin");
-                        return View(login);
+                        return PartialView("Login", login);
                     }
                     else
                     {
@@ -71,14 +71,14 @@ namespace Gymone.Web.Controllers
                 else
                 {
                     ModelState.AddModelError("Error", "Please enter valid Username and Password");
-                    return View(login);
+                    return PartialView("Login", login);
                 }
             }
             else
             {
                 ModelState.AddModelError("Error", "Please enter Username and Password");
             }
-            return View(login);
+           return PartialView("Login", login);
         }
         public IActionResult Logout()
         {
@@ -88,27 +88,27 @@ namespace Gymone.Web.Controllers
                     Response.Cookies.Delete(cookie);
             }
             HttpContext.Session.Clear();
-            return View();
+            return PartialView("Logout");
         }
         public IActionResult ForgotPassword()
         {
-            return View();
+            return PartialView("ForgotPassword");
         }
         public IActionResult RegisterUser()
         {
-            return View();
+            return PartialView("RegisterUser");
         }
 
         public IActionResult TermsAndConditions()
         {
-            return View();
+            return PartialView("TermsAndConditions");
         }
         public IActionResult ChangePassword()
         {
-            return View(new ChangepasswordVM());
+            return PartialView("ChangePassword", new ChangepasswordVM());
         }
         [HttpPost]
-        // [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Changepassword(ChangepasswordVM VM)
         {
             if (ModelState.IsValid)
@@ -141,7 +141,7 @@ namespace Gymone.Web.Controllers
             {
                 ModelState.AddModelError("Error", "Fill on Fields");
             }
-            return View(VM);
+            return PartialView("ChangePassword", VM);
         }
 
     }

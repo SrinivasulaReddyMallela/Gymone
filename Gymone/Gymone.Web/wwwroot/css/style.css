@@ -1340,7 +1340,13 @@ dt {
   left: 240px;
   font-family: "Poppins", sans-serif;
 }
-
+slimscroll-menu {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 380px;
+}
 /******* Responsive *******/
 @media (min-width: 769px) {
   .enlarged {

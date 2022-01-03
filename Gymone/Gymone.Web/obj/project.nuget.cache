@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5j509iv8ov8jXMKVc/LFBupTzk/eEFn2GdDMGqrABntHyjbM1JkakO/YDBjt5AjZePnqoipKnGru8f5g4b3RCA==",
+  "dgSpecHash": "BaYGLomZJdNo+9lCcwdtdAr/rpQdnR7qMGrVzuFDOPDTQ9Pf3SbPPc7fe8A182EwKS+wNWkvZpketSkM0Ej8lw==",
   "success": true,
   "projectFilePath": "D:\\Personal\\Profissional\\GymOneCore\\Gymone\\Gymone.Web\\Gymone.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\SrinivasMR\\.nuget\\packages\\jquery\\1.8.0\\jquery.1.8.0.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
@@ -44,6 +45,7 @@
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.extensions.webencoders\\2.2.0\\microsoft.extensions.webencoders.2.2.0.nupkg.sha512",
+    "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.jquery.unobtrusive.ajax\\3.2.6\\microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\SrinivasMR\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",

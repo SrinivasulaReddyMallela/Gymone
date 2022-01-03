@@ -13,24 +13,24 @@ namespace Gymone.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return PartialView("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         public IActionResult AccessDenied()
         {
-            return View();
+            return PartialView("AccessDenied");
         }
         public IActionResult UserDashboard()
         {
-            return View();
+            return View("UserDashboard");
         }
         public IActionResult Dashboard()
         {
-            return View();
+            return  View("Dashboard");
         }
     }
 }

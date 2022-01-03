@@ -90,3 +90,12 @@ D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\bin\Debug\netcoreapp3.1\Mi
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\UserDashboard.cshtml.g.cs
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Changepassword.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationSummary.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\GetUsers.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Schemes.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\MemberDetailsReport.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\MonthwiseReport.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Plans.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RolesAssignedtoUsers.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Users.cshtml.g.cs
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\obj\Debug\netcoreapp3.1\Razor\Views\Admin\YearwiseReport.cshtml.g.cs

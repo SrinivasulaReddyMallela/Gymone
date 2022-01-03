@@ -16,6 +16,7 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\SrinivasMR\.nuget\packages\jquery\1.8.0</PkgjQuery>
     <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\SrinivasMR\.nuget\packages\entityframework\6.1.0</PkgEntityFramework>
   </PropertyGroup>
 </Project>
