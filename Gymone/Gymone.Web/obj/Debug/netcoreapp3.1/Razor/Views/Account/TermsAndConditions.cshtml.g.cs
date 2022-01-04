@@ -19,8 +19,22 @@ using Gymone.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Web.Common;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"72f4e0692b392dc35745faa49322756796409556", @"/Views/Account/TermsAndConditions.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20bf9c0042f348b65688b0d6e9179631a4d6f36b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0445f3f2fa0ae63abf34a76feb20125f2dcc8f0", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_TermsAndConditions : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "5", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -84,7 +98,7 @@ using Gymone.Web;
             WriteLiteral(@"esponsive"">
                 <div id=""DataTables_Table_0_wrapper"" class=""dataTables_wrapper dt-bootstrap4 no-footer"">
                     <div class=""row""><div class=""col-sm-12 col-md-6""><div class=""dataTables_length"" id=""DataTables_Table_0_length""><label>Show <select name=""DataTables_Table_0_length"" aria-controls=""DataTables_Table_0"" class=""custom-select custom-select-sm form-control form-control-sm form-select form-select-sm"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095565926", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095566296", async() => {
                 WriteLiteral("5");
             }
             );
@@ -99,7 +113,7 @@ using Gymone.Web;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095567045", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095567415", async() => {
                 WriteLiteral("10");
             }
             );
@@ -114,7 +128,7 @@ using Gymone.Web;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095568165", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095568535", async() => {
                 WriteLiteral("25");
             }
             );
@@ -129,7 +143,7 @@ using Gymone.Web;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095569285", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72f4e0692b392dc35745faa493227567964095569655", async() => {
                 WriteLiteral("50");
             }
             );

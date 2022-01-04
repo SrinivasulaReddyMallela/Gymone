@@ -16,6 +16,11 @@ namespace Gymone.API.Repository
         /// </summary>
         /// <returns></returns>
         IQueryable<ApplicationWebUser> GetAllUsers();
+        /// <summary>
+        /// Get All users as Queryable collection
+        /// </summary>
+        /// <returns></returns>
+        List<ApplicationWebUser> GetAllUsersData();
 
         /// <summary>
         /// Get users by filter criteria

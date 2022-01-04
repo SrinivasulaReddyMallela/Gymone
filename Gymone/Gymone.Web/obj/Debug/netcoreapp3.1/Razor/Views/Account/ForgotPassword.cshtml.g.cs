@@ -19,8 +19,22 @@ using Gymone.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Web.Common;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fdf9ce084bd2bb74fddcce1072e911592e7e5f44", @"/Views/Account/ForgotPassword.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20bf9c0042f348b65688b0d6e9179631a4d6f36b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0445f3f2fa0ae63abf34a76feb20125f2dcc8f0", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_ForgotPassword : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -75,7 +89,7 @@ using Gymone.Web;
                                     Enter your Email and instructions will be sent to you!
                                 </div>
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdf9ce084bd2bb74fddcce1072e911592e7e5f444951", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdf9ce084bd2bb74fddcce1072e911592e7e5f445321", async() => {
                 WriteLiteral(@"
 
                                     <div class=""auth-form-group-custom mb-4"">

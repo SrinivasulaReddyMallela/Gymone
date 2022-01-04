@@ -26,11 +26,11 @@ namespace Gymone.Web.Controllers
         }
         public IActionResult UserDashboard()
         {
-            return View("UserDashboard");
+            return View();
         }
         public IActionResult Dashboard()
         {
-            return  View("Dashboard");
+            return  View();
         }
     }
 }

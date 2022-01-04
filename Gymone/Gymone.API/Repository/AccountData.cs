@@ -7,11 +7,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
- 
+
 
 namespace Gymone.API.Repository
 {
-    public class AccountData: IAccountData
+    public class AccountData : IAccountData
     {
         private readonly IConfiguration _config;
         private string Connectionstring = "GymoneDatabase";
@@ -24,7 +24,7 @@ namespace Gymone.API.Repository
         public bool Login(string Login, string Password, bool persistCookie = false)
         {
             return true;
-           // return WebMatrix.WebData.WebSecurity.Login(Login, Password,persistCookie);
+            // return WebMatrix.WebData.WebSecurity.Login(Login, Password,persistCookie);
         }
 
         public IEnumerable<Role> GetRoles()
@@ -100,5 +100,17 @@ namespace Gymone.API.Repository
                 return con.Query<AllroleandUser>("Usp_DisplayAllUser_And_Roles", null, null, true, 0, CommandType.StoredProcedure).ToList();
             }
         }
+
+        public Login GetLoginData(string Login, string Password)
+        {
+            var para = new DynamicParameters();
+            para.Add("@Login", Login);
+            para.Add("@Password", Password);
+            using (SqlConnection con = new SqlConnection(_config.GetConnectionString(Connectionstring)))
+            {
+                return con.Query<Login>("Usp_GetLoginDatabyUseridPassword", para, null, true, 0, CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+
     }
 }

@@ -51,9 +51,22 @@
             }
 
         /******* Page Title *******/
+        #divloader {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: #e6f1f036;
+            z-index: 99;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <div id="divloader" style="display:none;">
+        <img src="~/images/Spinner.gif" style="height:205px;width:200px;top:0;margin-top:15%;" />
+    </div>
     <div id="wrapper">
         <div class="content-page">
             <div class="content">

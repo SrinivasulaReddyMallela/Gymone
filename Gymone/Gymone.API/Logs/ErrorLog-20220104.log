@@ -1,0 +1,17 @@
+2022-01-04T21:32:18.4480574+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T21:32:18.4779790+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T21:32:18.4826098+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)
+2022-01-04T21:38:52.0185280+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T21:38:52.0308716+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T21:38:52.0334356+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)
+2022-01-04T21:39:13.2095592+05:30 8000000a-0001-f200-b63f-84710c7967bb [WRN] GetAllUsers (f8730ec3)
+System.InvalidOperationException: The source IQueryable doesn't implement IDbAsyncEnumerable<Gymone.Entities.ApplicationWebUser>. Only sources that implement IDbAsyncEnumerable can be used for Entity Framework asynchronous operations. For more details see http://go.microsoft.com/fwlink/?LinkId=287068.
+   at System.Data.Entity.QueryableExtensions.AsDbAsyncEnumerable[T](IQueryable`1 source)
+   at System.Data.Entity.QueryableExtensions.ToListAsync[TSource](IQueryable`1 source)
+   at Gymone.API.Controllers.AccountController.GetAllUsers() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\Controllers\AccountController.cs:line 117
+2022-01-04T21:45:24.5058730+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T21:45:24.5186585+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T21:45:24.5218734+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)
+2022-01-04T22:20:11.5711817+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T22:20:11.5849034+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T22:20:11.5922879+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.API\bin\Debug\netcoreapp3.1\" (b5d60022)

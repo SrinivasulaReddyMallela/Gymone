@@ -19,8 +19,22 @@ using Gymone.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Web.Common;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Views\_ViewImports.cshtml"
+using Gymone.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dc3990a1c2178e0a5f8a809e46295ed805770545", @"/Views/Account/RegisterUser.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20bf9c0042f348b65688b0d6e9179631a4d6f36b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0445f3f2fa0ae63abf34a76feb20125f2dcc8f0", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_RegisterUser : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -72,7 +86,7 @@ using Gymone.Web;
 
                             <div class=""p-2 mt-5"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc3990a1c2178e0a5f8a809e46295ed8057705454724", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc3990a1c2178e0a5f8a809e46295ed8057705455094", async() => {
                 WriteLiteral(@"
 
                                     <div class=""auth-form-group-custom mb-4"">

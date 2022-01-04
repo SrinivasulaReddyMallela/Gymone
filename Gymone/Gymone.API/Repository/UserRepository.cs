@@ -49,7 +49,13 @@ namespace Gymone.API.Repository
                 return context.Users.AsQueryable();
             }
         }
-
+        public List<ApplicationWebUser> GetAllUsersData()
+        {
+            using (var context = _contextFactory.GetContext())
+            {
+                return context.Users.ToList();
+            }
+        }
         public async Task<List<ApplicationWebUser>> GetUsersByFilter(Expression<Func<ApplicationWebUser, bool>> exp)
         {
             using (var context = _contextFactory.GetContext())

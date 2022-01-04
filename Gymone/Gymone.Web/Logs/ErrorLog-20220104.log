@@ -1,0 +1,198 @@
+2022-01-04T22:57:03.6066663+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T22:57:03.6223840+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T22:57:03.6250071+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T22:58:41.2254629+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T22:58:41.2404554+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T22:58:41.2427536+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T22:59:57.7180551+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T22:59:57.7429170+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T22:59:57.7520810+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:07:45.4658304+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:07:45.4855685+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:07:45.4895853+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:14:10.2307930+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:14:10.2707416+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:14:10.2748209+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:16:44.7586117+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:16:44.7713917+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:16:44.7735539+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:17:14.8718450+05:30 80000021-0001-f000-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: An item with the same key has already been added. Key: System.Net.Http.Headers.HeaderDescriptor
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:19:45.0683943+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:19:45.1106991+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:19:45.1150685+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:20:17.7653429+05:30 8000000a-0002-f700-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: An item with the same key has already been added. Key: System.Net.Http.Headers.HeaderDescriptor
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:23:48.7362442+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:23:48.7508858+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:23:48.7537373+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:24:19.1986699+05:30 80000047-0003-ff00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: An item with the same key has already been added. Key: System.Net.Http.Headers.HeaderDescriptor
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:24:34.6514089+05:30 80000051-0002-fb00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:45:49.8616789+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:45:49.8781885+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:45:49.8800720+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:46:42.5286534+05:30 8000006e-0000-f600-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: An item with the same key has already been added. Key: System.Net.Http.Headers.HeaderDescriptor
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:48:27.8902131+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:48:27.9033557+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:48:27.9057965+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:51:01.2980409+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:51:01.3260637+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:51:01.3424834+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)
+2022-01-04T23:52:50.0477058+05:30 8000000e-0002-f700-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: An item with the same key has already been added. Key: System.Net.Http.Headers.HeaderDescriptor
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+   at Gymone.Web.Common.ApiClient.addHeaders() in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 94
+   at Gymone.Web.Common.ApiClient.GetAsync[T](Uri requestUrl) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\ApiClient.cs:line 30
+   at Gymone.Web.Common.ApiClient.ReturnQueryStringValues[T](String ApiQueryString) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Common\UserClient.cs:line 13
+   at Gymone.Web.Controllers.AdminController.GetUsers(String sortOrder, String currentFilter, String searchString, Nullable`1 pageNumber) in D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web\Controllers\AdminController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-01-04T23:55:50.8804691+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-01-04T23:55:50.9104720+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-01-04T23:55:50.9142933+05:30  [INF] Content root path: "D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Web" (b5d60022)

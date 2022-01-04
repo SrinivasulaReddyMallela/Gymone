@@ -18,5 +18,7 @@ namespace Gymone.API.Repository
         bool Get_CheckUserRoles(string UserId);
         string GetUserName_BY_UserID(string UserId);
         IEnumerable<AllroleandUser> DisplayAllUser_And_Roles();
+        Login GetLoginData(string Login, string Password);
+        
     }
 }

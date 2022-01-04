@@ -1,10 +1,10 @@
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\bin\Debug\netcoreapp3.1\Gymone.Entities.deps.json
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\bin\Debug\netcoreapp3.1\Gymone.Entities.dll
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\bin\Debug\netcoreapp3.1\Gymone.Entities.pdb
+D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.csproj.AssemblyReference.cache
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.GeneratedMSBuildEditorConfig.editorconfig
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.AssemblyInfoInputs.cache
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.AssemblyInfo.cs
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.csproj.CoreCompileInputs.cache
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.dll
 D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.pdb
-D:\Personal\Profissional\GymOneCore\Gymone\Gymone.Entities\obj\Debug\netcoreapp3.1\Gymone.Entities.csproj.AssemblyReference.cache

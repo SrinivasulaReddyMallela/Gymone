@@ -30,7 +30,7 @@ namespace Gymone.Web.Controllers
 
         public IActionResult Login()
         {
-            return PartialView("Login");
+            return View("Login");
         }
 
         [HttpPost]
@@ -41,7 +41,7 @@ namespace Gymone.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var success = await ApiClientFactory.Instance.ReturnQueryStringValues<bool>($"Account/Login/{login.username}/{login.password}/{login.RememberMe}");
+                var success = ApiClientFactory.Instance.ReturnQueryStringValues<bool>($"Account/Login/{login.username}/{login.password}/{login.RememberMe}").GetAwaiter().GetResult();
                 if (success == true)
                 {
                     var UserID = await ApiClientFactory.Instance.ReturnQueryStringValues($"Account/GetUserID_By_UserName/{login.username}");
@@ -49,7 +49,7 @@ namespace Gymone.Web.Controllers
                     if (string.IsNullOrEmpty(Convert.ToString(LoginType)))
                     {
                         ModelState.AddModelError("Error", "Rights to User are not Provide Contact to Admin");
-                        return PartialView("Login", login);
+                        return View("Login", login);
                     }
                     else
                     {
@@ -60,25 +60,25 @@ namespace Gymone.Web.Controllers
 
                         if (LoginType.ToLower() == "Admin".ToLower())
                         {
-                            return RedirectToAction("Dashboard", "Home");
+                            return RedirectToActionPermanent("Dashboard", "Home");
                         }
                         else
                         {
-                            return RedirectToAction("UserDashboard", "Home");
+                            return RedirectToActionPermanent("UserDashboard", "Home");
                         }
                     }
                 }
                 else
                 {
                     ModelState.AddModelError("Error", "Please enter valid Username and Password");
-                    return PartialView("Login", login);
+                    return View("Login", login);
                 }
             }
             else
             {
                 ModelState.AddModelError("Error", "Please enter Username and Password");
             }
-           return PartialView("Login", login);
+           return View("Login", login);
         }
         public IActionResult Logout()
         {

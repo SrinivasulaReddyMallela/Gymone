@@ -32,12 +32,28 @@
     <script src="~/js/dashboard.init.js" asp-append-version="true"></script>
     <!-- App js -->
     <script src="~/js/app.js" asp-append-version="true"></script>
-    
-    <title>:: Gymone ::</title>
 
+    <title>:: Gymone ::</title>
+    <style>
+        #divloader {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: #e6f1f036;
+            z-index: 99;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
+     
+
+    <div id="divloader" style="display:none;">
+        <img src="~/images/Spinner.gif" style="height:205px;width:200px;top:0;margin-top:15%;" />
+    </div>
     <!-- Begin page -->
     <div id="wrapper">
 
@@ -75,6 +91,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <a class="dropdown-item" asp-area="" asp-action="ChangePassword" data-ajax="true" data-ajax-method="get"
+                                   data-ajax-loading="#divloader"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("ChangePassword","Account")">
                                     <i class="mdi mdi-account-circle"></i> Change Password
                                 </a>
@@ -106,7 +123,7 @@
                 <div id="sidebar-menu">
                     <!-- Left Menu Start -->
                     <ul class="metismenu" id="side-menu">
-                        @*<li class="menu-title">Menu</li>*@
+                        <li class="menu-title">Menu</li>
                         <li>
 
                             @if (JsonConvert.DeserializeObject<string>(HttpContextAccessor.HttpContext.Session.GetString("LoginType")) == "Admin")
@@ -117,43 +134,51 @@
 
                                 <a asp-area="" asp-action="GetUsers" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("GetUsers","Admin")"
-                                   class="icon-diamond">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> User Accounts </span>
                                 </a>
                                 <a asp-area="" asp-action="Schemes" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Schemes","Admin")"
-                                   class="icon-calendar">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Schemes</span>
                                 </a>
                                 <a asp-area="" asp-action="Plans" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Plans","Admin")"
-                                   class="icon-paper-sheet">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Plans</span>
                                 </a>
                                 <a asp-area="" asp-action="RolesAssignedtoUsers" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("RolesAssignedtoUsers","Admin")"
-                                   class="icon-todolist-check">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Roles Assigned to Users</span>
                                 </a>
                                 <a asp-area="" asp-action="Users" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Users","Admin")"
-                                   class="icon-spread">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Users</span>
                                 </a>
 
                                 <a asp-area="" asp-action="YearwiseReport" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("YearwiseReport","Admin")"
-                                   class="icon-coffee">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Yearwise Report</span>
                                 </a>
                                 <a asp-area="" asp-action="MonthwiseReport" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("MonthwiseReport","Admin")"
-                                   class="icon-map">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Monthwise Report</span>
                                 </a>
                                 <a asp-area="" asp-action="MemberDetailsReport" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("MemberDetailsReport","Admin")"
-                                   class="icon-accelerator">
+                                   data-ajax-loading="#divloader"
+                                   class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> Members</span>
                                 </a>
 
@@ -196,6 +221,7 @@
                             {
                                 <a asp-area="" asp-action="AccessDenied" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("AccessDenied","Home")"
+                                   data-ajax-loading="#divloader"
                                    class="waves-effect">
                                     <i class="icon-accelerator"></i> <span> AccessDenied</span>
                                 </a>
@@ -251,11 +277,11 @@
     </div>
 
     <!-- END wrapper -->
-    
+
 
     @section Scripts  {
         @await Html.PartialAsync("_ValidationScriptsPartial")
     }
-    
+
 </body>
 </html>

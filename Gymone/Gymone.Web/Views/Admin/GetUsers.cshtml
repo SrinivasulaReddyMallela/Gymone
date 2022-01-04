@@ -1,1 +1,129 @@
-﻿<h1>This is  User Accounts page</h1>
+﻿@model Gymone.Web.Models.PaginatedList<ApplicationWebUser>
+@{ViewData["Title"] = "Get Users";
+    Layout = null;
+}
+
+
+<div id="divGrid">
+
+    <form method="get" data-ajax="true" data-ajax-method="get"
+          data-ajax-update="#divGrid" data-ajax-mode="replace" data-ajax-url="@Url.Action("GetUsers", "Admin")"
+          data-ajax-loading="#divloader"
+          >
+        <br/>
+        <br/>
+        <h2 style="text-align:center;">Get Users</h2>
+        <br/>
+        <br/>
+        @*<p>
+                <a asp-action="Create" data-ajax="true" data-ajax-method="get"
+                   data-ajax-update="#divGrid" data-ajax-mode="replace"
+                   data-ajax-url="@Url.Action("Create","Admin")">Create New</a>
+            </p>*@
+
+        <div class="form-actions no-color">
+            <p>
+                Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-primary" />  
+                @*<a asp-action="GetUsers" data-ajax="true" data-ajax-method="get"
+                   data-ajax-update="#divGrid" data-ajax-mode="replace" data-ajax-url="@Url.Action("GetUsers","Admin")?currentFilter=@ViewData["CurrentFilter"]">Back to Full List</a>*@
+            </p>
+        </div>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-action="GetUsers" 
+                            asp-route-sortOrder="@ViewData["NameSortParm"]" 
+                            asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           data-ajax="true" data-ajax-method="get"
+                           data-ajax-update="#divGrid" data-ajax-mode="replace" 
+                           data-ajax-url="@Url.Action("GetUsers","Admin")?sortOrder=@ViewData["NameSortParm"]&currentFilter=@ViewData["CurrentFilter"]">First Name</a>
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        <a asp-action="GetUsers" asp-route-sortOrder="@ViewData["EmailSortParm"]" 
+                           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           data-ajax="true" data-ajax-method="get"
+                           data-ajax-update="#divGrid" data-ajax-mode="replace" 
+                           data-ajax-url="@Url.Action("GetUsers","Admin")?sortOrder=@ViewData["EmailSortParm"]&currentFilter=@ViewData["CurrentFilter"]">Email ID</a>
+                    </th>
+                    <th>
+                        Email Confirmed
+                    </th>
+                    <th>
+                        Mobile Number
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    @*<td>
+                            <a asp-action="Edit" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="get"
+                               data-ajax-update="#divGrid" data-ajax-mode="replace"
+                               data-ajax-url="@Url.Action("Edit","Admin")?id=@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID"
+                               data-ajax="true" data-ajax-method="get"
+                               data-ajax-update="#divGrid" data-ajax-mode="replace"
+                               data-ajax-url="@Url.Action("Details","Admin")?id=@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="get"
+                               data-ajax-update="#divGrid" data-ajax-mode="replace"
+                               data-ajax-url="@Url.Action("Details","Admin")?id=@item.ID">Delete</a>
+                        </td>*@
+                </tr>
+}
+            </tbody>
+        </table>
+
+        @{ var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }
+
+        <a asp-action="GetUsers"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled" data-ajax="true" data-ajax-method="get"
+           data-ajax-update="#divGrid" data-ajax-mode="replace"
+           data-ajax-url="@Url.Action("GetUsers","Admin")?sortOrder=@ViewData["CurrentSort"]&pageNumber=@(Model.PageIndex - 1)&currentFilter=@ViewData["CurrentFilter"]">
+            Previous
+        </a>
+        <a asp-action="GetUsers"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled" data-ajax="true" data-ajax-method="get"
+           data-ajax-update="#divGrid" data-ajax-mode="replace"
+           data-ajax-url="@Url.Action("GetUsers","Admin")?sortOrder=@ViewData["CurrentSort"]&pageNumber=@(Model.PageIndex + 1)&currentFilter=@ViewData["CurrentFilter"]">
+            Next
+        </a>
+    </form>
+</div>

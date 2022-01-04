@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
@@ -56,7 +57,7 @@ namespace Gymone.API.Controllers
         {
             try
             {
-               return _userManager.FindByIdAsync(UserID).GetAwaiter().GetResult();
+                return _userManager.FindByIdAsync(UserID).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
@@ -74,9 +75,9 @@ namespace Gymone.API.Controllers
             try
             {
                 var user = _userManager.FindByIdAsync(UserID).GetAwaiter().GetResult();
-               return await UserRepository.SetPasswordHashAsync(user, new PasswordHasher<ApplicationWebUser>().HashPassword(user, NewPassword));
-               // return _userManager.UpdatePasswordHash(user, NewPassword, false).GetAwaiter().GetResult();
-               // return _userManager.ChangePasswordAsync(user, OLDPassword, NewPassword).GetAwaiter().GetResult();
+                return await UserRepository.SetPasswordHashAsync(user, new PasswordHasher<ApplicationWebUser>().HashPassword(user, NewPassword));
+                // return _userManager.UpdatePasswordHash(user, NewPassword, false).GetAwaiter().GetResult();
+                // return _userManager.ChangePasswordAsync(user, OLDPassword, NewPassword).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
@@ -109,17 +110,16 @@ namespace Gymone.API.Controllers
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IEnumerable<Users> GetAllUsers()
+        public List<ApplicationWebUser> GetAllUsers()
         {
             try
             {
-                return accountdata.GetAllUsers();
+                return UserRepository.GetAllUsersData();
             }
             catch (Exception ex)
             {
                 _logger.LogWarning(1, ex, "GetAllUsers", 1);
-                // return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "Internal Server Error" });
-                return new List<Users>();
+                return new List<ApplicationWebUser>();
             }
         }
         [HttpGet]
@@ -222,6 +222,24 @@ namespace Gymone.API.Controllers
             {
                 _logger.LogWarning(1, ex, "DisplayAllUser_And_Roles", 1);
                 return new List<AllroleandUser>();
+            }
+        }
+
+        [HttpGet]
+        [Route("GetLoginData")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Login GetLoginData(string Login, string Password, bool persistCookie = false)
+        {
+            try
+            {
+                return accountdata.GetLoginData(Login, )
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(1, ex, "GetLoginData", 1);
+                return new Login();
             }
         }
     }

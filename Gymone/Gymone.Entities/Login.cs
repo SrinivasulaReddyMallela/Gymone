@@ -16,5 +16,9 @@ namespace Gymone.Entities
         [Required(ErrorMessage = "Enter User name")]
         public string username { get; set; }
         public bool RememberMe { get; set; }
+        public bool IsLoginSucess { get; set; }
+        public string LoginType { get; set; }
+        public string UserID { get; set; }
+
     }
 }
