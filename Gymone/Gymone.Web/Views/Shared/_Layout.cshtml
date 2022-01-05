@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="~/css/morris.css">
@@ -19,10 +19,9 @@
     <link href="~/css/metismenu.min.css" rel="stylesheet">
     <link href="~/css/icons.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
-    @RenderSection("Scripts", false)
+
     <!-- jQuery  -->
-    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/metismenu.min.js" asp-append-version="true"></script>
     <script src="~/js/jquery.slimscroll.js" asp-append-version="true"></script>
     <script src="~/js/waves.min.js" asp-append-version="true"></script>
@@ -32,6 +31,7 @@
     <script src="~/js/dashboard.init.js" asp-append-version="true"></script>
     <!-- App js -->
     <script src="~/js/app.js" asp-append-version="true"></script>
+
 
     <title>:: Gymone ::</title>
     <style>
@@ -49,7 +49,7 @@
 </head>
 <body>
 
-     
+
 
     <div id="divloader" style="display:none;">
         <img src="~/images/Spinner.gif" style="height:205px;width:200px;top:0;margin-top:15%;" />
@@ -128,7 +128,7 @@
 
                             @if (JsonConvert.DeserializeObject<string>(HttpContextAccessor.HttpContext.Session.GetString("LoginType")) == "Admin")
                             {
-                                <a href="/Home/UserDashboard" class="waves-effect">
+                                <a href="/Home/UserDashboard" class="waves-effect" id="aDashboard">
                                     <i class="icon-accelerator"></i> <span> Dashboard </span>
                                 </a>
 
@@ -136,38 +136,38 @@
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("GetUsers","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> User Accounts </span>
+                                    <i class="icon-mail-open"></i> <span> User Accounts </span>
                                 </a>
                                 <a asp-area="" asp-action="Schemes" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Schemes","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Schemes</span>
+                                    <i class="icon-calendar"></i> <span> Schemes</span>
                                 </a>
                                 <a asp-area="" asp-action="Plans" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Plans","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Plans</span>
+                                    <i class="icon-paper-sheet"></i> <span> Plans</span>
                                 </a>
                                 <a asp-area="" asp-action="RolesAssignedtoUsers" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("RolesAssignedtoUsers","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Roles Assigned to Users</span>
+                                    <i class="icon-diamond"></i> <span> Roles Assigned to Users</span>
                                 </a>
                                 <a asp-area="" asp-action="Users" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("Users","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Users</span>
+                                    <i class="icon-spread"></i> <span> Users</span>
                                 </a>
 
                                 <a asp-area="" asp-action="YearwiseReport" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("YearwiseReport","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Yearwise Report</span>
+                                    <i class="icon-map"></i> <span> Yearwise Report</span>
                                 </a>
                                 <a asp-area="" asp-action="MonthwiseReport" data-ajax="true" data-ajax-method="get"
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("MonthwiseReport","Admin")"
@@ -179,13 +179,13 @@
                                    data-ajax-update="#divcontainerfluid" data-ajax-mode="replace" data-ajax-url="@Url.Action("MemberDetailsReport","Admin")"
                                    data-ajax-loading="#divloader"
                                    class="waves-effect">
-                                    <i class="icon-accelerator"></i> <span> Members</span>
+                                    <i class="icon-paper-sheet"></i> <span> Members</span>
                                 </a>
 
                             }
                             else if (JsonConvert.DeserializeObject<string>(HttpContextAccessor.HttpContext.Session.GetString("LoginType")) == "SystemUser")
                             {
-                                <a href="/Home/UserDashboard" class="waves-effect">
+                                <a href="/Home/UserDashboard" class="waves-effect" id="aDashboard">
                                     <i class="icon-accelerator"></i> <span> Dashboard </span>
                                 </a>
 
@@ -282,6 +282,10 @@
     @section Scripts  {
         @await Html.PartialAsync("_ValidationScriptsPartial")
     }
-
+   
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", false)
 </body>
 </html>
